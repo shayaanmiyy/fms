@@ -40,21 +40,9 @@
 			<div class="shadow-none card mb-4" id="newsfeed">
 				<div class="card-body">
 					<h3 class="card-title">{{ post.title }}</h3>
-					<p class="card-text text-muted h6"><span>{{ post.author.first_name }} {{ post.author.last_name
-							}}</span> | {{ post.created_on}} </p>
-
-
-
-
-
+					<p class="card-text text-muted h6"><span>{{ post.author.first_name }} {{ post.author.last_name }}</span> | {{ post.created_on}} </p>
 					<p class="card-text">{{post.metades }}</p>
-
-
-
-
-
-					<span><a href="{% url 'post_detail' post.slug %}" class="btn btn-outline-primary">Read More
-							→</a></span><span><a class="btn btn-outline-success">AMP page</a></span>
+					<span><a href="{% url 'post_detail' post.slug %}" class="btn btn-outline-primary">Read More →</a></span><span><a class="btn btn-outline-success">AMP page</a></span>
 				</div>
 			</div>
 			{% endfor %}
