@@ -13,6 +13,7 @@ class posts(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     # author field populated using users database
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+
     # and date time fields automatically populated using system time
     updated_on = models.DateTimeField(auto_now=True)
     created_on = models.DateTimeField()
@@ -22,6 +23,8 @@ class posts(models.Model):
     metades = models.CharField(max_length=300, default="new post")
     # status of post
     status = models.IntegerField(choices=STATUS, default=0)
+    # URL field for storing the post's image
+    image_url = models.URLField(blank=True, null=True)
 
     # meta for the class
     class Meta:
