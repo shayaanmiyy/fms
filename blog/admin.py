@@ -2,4 +2,13 @@ from django.contrib import admin
 from .models import posts
 
 # Register your models here.
-admin.site.register(posts)
+class PostAdmin(admin.ModelAdmin):
+    list_display = ('get_index', 'title', 'created_on', 'status')
+
+    def get_index(self, obj):
+        return obj.id
+
+    get_index.short_description = 'Index'
+
+
+admin.site.register(posts, PostAdmin)

@@ -10,10 +10,10 @@ from django.http import HttpResponse
 class postslist(generic.ListView):
     queryset = posts.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
-    paginate_by = 4
+    paginate_by = 10
 
 
 # class based view for each post
 class postdetail(generic.DetailView):
     model = posts
-    template_name = "post.html"
+    template_name = "single-post.html"
