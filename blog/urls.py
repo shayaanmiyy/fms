@@ -5,6 +5,7 @@ from .views import *
 # from .feeds import blogFeed
 
 urlpatterns = [
+    path('about/', views.about, name='about'),
     # home page
     path('', views.postslist.as_view(), name='posts'),
     # route for posts

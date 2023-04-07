@@ -6,6 +6,10 @@ from django.views.decorators.http import require_GET
 from django.http import HttpResponse
 
 
+def about(request):
+    return render(request, "about.html")
+
+
 # class based views for posts
 class postslist(generic.ListView):
     queryset = posts.objects.filter(status=1).order_by('-created_on')
